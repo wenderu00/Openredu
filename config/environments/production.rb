@@ -73,12 +73,12 @@ Redu::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address => "email-smtp.us-east-1.amazonaws.com",
-    :port => 465,
+    :address => ENV['SMTP_ADDR'],
+    :port => ENV.fetch('SMTP_PORT', 465),
     :domain => ENV['SMTP_DOMAIN'],
-    :authentication => :login,
-    :user_name => 'AKIAINQ5Y2UPLZJQM3EA',
-    :password => 'AqEmj6PTCT8HJCpUB9qmIXQb+G2SaKEFjKcWrR9MLUaF'
+    :authentication => ENV.fetch('SMTP_AUTHENTICATION', :login),
+    :user_name => ENV['SMTP_USER'],
+    :password => ENV['SMTP_PASSWD']
   }
 
   # Compress JavaScripts and CSS
