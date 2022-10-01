@@ -1,6 +1,6 @@
-Feature: Business rules
-  In order to achieve my goals
-  As a persona
+Feature: Blogin
+  In order to acess Openredu
+  As a user
   I want to be able to interact with a system
 
   Scenario: login successfully
