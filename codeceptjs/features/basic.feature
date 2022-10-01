@@ -3,5 +3,9 @@ Feature: Business rules
   As a persona
   I want to be able to interact with a system
 
-  Scenario: do something
-    Given I have a defined step
+  Scenario: login successfully
+    Given I am already in login page
+    When I fill username
+    And I fill password
+    And I click on submit
+    Then I can see the homepage
