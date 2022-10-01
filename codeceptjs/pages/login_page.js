@@ -11,6 +11,12 @@ class LoginPage extends BasePage{
         this.buttonSubmit = '//button[@class="bt active"]'
     }
 
+    async isLoginPage(){
+        I.waitForElement(this.inputLogin);
+        I.waitForElement(this.inputPassword);
+        I.waitForElement(this.buttonSubmit);
+    }
+
     async accessLoginPage(){
         I.amOnPage('/');
     }
