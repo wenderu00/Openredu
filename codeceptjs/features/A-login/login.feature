@@ -1,4 +1,6 @@
-Feature: Blogin
+@all
+@login
+Feature: login
   In order to acess Openredu
   As a user
   I want to be able to interact with a system

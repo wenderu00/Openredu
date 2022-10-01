@@ -50,3 +50,27 @@ Then('I can see the loginpage', async ()=>{
 })
 
 //logout successfully end
+
+//login without username and password begin
+
+Then('I can see the error login message {string}',async (errorMessage)=>{
+  await LoginPage.iCanSeeErrorMessage(errorMessage);
+})
+
+//login without username and password end
+
+// Login with wrong username begin
+
+When('I fill wrong username', async ()=>{
+  await LoginPage.fillLogin("wronguser");
+})
+
+// Login with wrong username end
+
+// Login with wrong password begin
+
+When('I fill wrong password', async ()=>{
+  await LoginPage.fillPassword("wrongpassword");
+})
+
+// Login with wrong password end

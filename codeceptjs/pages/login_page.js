@@ -1,14 +1,15 @@
 const { I } = inject();
 const BasePage = require('./base_page');
-
+const FIELD_VALUE = "<VALUE>";
 
 
 class LoginPage extends BasePage{
     constructor(){
         super();
         this.inputLogin = '#user_session_login';
-        this.inputPassword = '#user_session_password'
-        this.buttonSubmit = '//button[@class="bt active"]'
+        this.inputPassword = '#user_session_password';
+        this.buttonSubmit = '//button[@class="bt active"]';
+        this.errorMessage = '//li[@class="error-message" and text()="<VALUE>"]';
     }
 
     async isLoginPage(){
@@ -36,6 +37,13 @@ class LoginPage extends BasePage{
         I.click(this.buttonSubmit);
     }
 
+    async clickOnCreateAccount(){
+
+    }
+
+    async iCanSeeErrorMessage(errorMessage){
+        I.waitForElement(this.errorMessage.replace(FIELD_VALUE,errorMessage),this.timeout);
+    }
 
 }
 
