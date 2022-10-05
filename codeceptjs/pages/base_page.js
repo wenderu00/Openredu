@@ -1,5 +1,5 @@
 const { I } = inject();
-const timeout = 60;
+const timeout = 5;
 
 class BasePage {
     constructor(){
