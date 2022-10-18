@@ -54,6 +54,18 @@ When('I fill username of create account', async ()=>{
     await LoginPage.fillLoginCreateUser(process.env.USER_LOGIN);
 })
 
+When('I fill username of create account with special characters', async ()=>{
+    await LoginPage.fillLoginCreateUser("@@@@@");
+})
+
+When('I fill username of create account with space character at the beginning', async ()=>{
+    await LoginPage.fillLoginCreateUser(" spacebeginning");
+})
+
+When('I fill username of create account with space character at the end', async ()=>{
+    await LoginPage.fillLoginCreateUser("spaceend ");
+})
+
 When('I fill password of create account', async ()=>{
     await LoginPage.fillPasswordCreateUser(process.env.USER_PASSWORD);
 })
@@ -62,8 +74,24 @@ When('I fill password confirmation', async ()=>{
     await LoginPage.fillPasswordConfirmation(process.env.USER_PASSWORD);
 })
 
+When('I fill password confirmation with an invalid password', async ()=>{
+    await LoginPage.fillPasswordConfirmation(111);
+})
+
+When('I fill password of create account with a short password', async ()=>{
+    await LoginPage.fillPasswordCreateUser(1);
+})
+
+When('I fill password confirmation with a short password', async ()=>{
+    await LoginPage.fillPasswordConfirmation(1);
+})
+
 When('I fill correct answer', async ()=>{
     await LoginPage.fillHumanizer();
+})
+
+When('I fill correct answer wrongly', async ()=>{
+    await LoginPage.fillHumanizer("neebla respondere");
 })
 
 When('I click on EULA checkbox', async ()=>{
